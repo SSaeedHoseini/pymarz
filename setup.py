@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 
 NAME = "pymarz"
-VERSION = "1.0.1"
+VERSION = "1.0.0"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "requests",

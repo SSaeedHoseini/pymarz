@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pymarz"
-version = "1.0.1"
+version = "1.0.0"
 description = "Asynchronous Python library for interacting with Marzban"
 authors = ["SSaeedhoseini"]
 license = "MIT License"
