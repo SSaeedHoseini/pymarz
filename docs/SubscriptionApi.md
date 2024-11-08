@@ -1,4 +1,4 @@
-# marzapi.SubscriptionApi
+# pymarz.SubscriptionApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,21 +22,21 @@ Fetches the usage statistics for the user within a specified date range.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SubscriptionApi(api_client)
+    api_instance = pymarz.SubscriptionApi(api_client)
     token = 'token_example' # str | 
     start = '' # str |  (optional) (default to '')
     end = '' # str |  (optional) (default to '')
@@ -94,21 +94,21 @@ Provides a subscription link based on the user agent (Clash, V2Ray, etc.).
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SubscriptionApi(api_client)
+    api_instance = pymarz.SubscriptionApi(api_client)
     token = 'token_example' # str | 
     user_agent = '' # str |  (optional) (default to '')
 
@@ -163,22 +163,22 @@ Retrieves detailed information about the user's subscription.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.subscription_user_response import SubscriptionUserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.subscription_user_response import SubscriptionUserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SubscriptionApi(api_client)
+    api_instance = pymarz.SubscriptionApi(api_client)
     token = 'token_example' # str | 
 
     try:
@@ -231,21 +231,21 @@ Provides a subscription link based on the specified client type (e.g., Clash, V2
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SubscriptionApi(api_client)
+    api_instance = pymarz.SubscriptionApi(api_client)
     client_type = 'client_type_example' # str | 
     token = 'token_example' # str | 
     user_agent = '' # str |  (optional) (default to '')

@@ -1,4 +1,4 @@
-# marzapi.CoreApi
+# pymarz.CoreApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,13 +23,13 @@ Get the current core configuration.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -41,9 +41,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.CoreApi(api_client)
+    api_instance = pymarz.CoreApi(api_client)
 
     try:
         # Get Core Config
@@ -92,14 +92,14 @@ Retrieve core statistics such as version and uptime.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.core_stats import CoreStats
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.core_stats import CoreStats
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -111,9 +111,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.CoreApi(api_client)
+    api_instance = pymarz.CoreApi(api_client)
 
     try:
         # Get Core Stats
@@ -162,13 +162,13 @@ Modify the core configuration and restart the core.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -180,9 +180,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.CoreApi(api_client)
+    api_instance = pymarz.CoreApi(api_client)
     body = None # object | 
 
     try:
@@ -236,13 +236,13 @@ Restart the core and all connected nodes.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -254,9 +254,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.CoreApi(api_client)
+    api_instance = pymarz.CoreApi(api_client)
 
     try:
         # Restart Core

@@ -1,4 +1,4 @@
-# marzapi.NodeApi
+# pymarz.NodeApi
 
 All URIs are relative to *http://localhost*
 
@@ -27,15 +27,15 @@ Add a new node to the database and optionally add it as a host.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.node_create import NodeCreate
-from marzapi.models.node_response import NodeResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.node_create import NodeCreate
+from pymarz.models.node_response import NodeResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -47,10 +47,10 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
-    node_create = marzapi.NodeCreate() # NodeCreate | 
+    api_instance = pymarz.NodeApi(api_client)
+    node_create = pymarz.NodeCreate() # NodeCreate | 
 
     try:
         # Add Node
@@ -103,14 +103,14 @@ Retrieve details of a specific node by its ID.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.node_response import NodeResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.node_response import NodeResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -122,9 +122,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
     node_id = 56 # int | 
 
     try:
@@ -178,14 +178,14 @@ Retrieve the current node settings, including TLS certificate.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.node_settings import NodeSettings
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.node_settings import NodeSettings
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -197,9 +197,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
 
     try:
         # Get Node Settings
@@ -248,14 +248,14 @@ Retrieve a list of all nodes. Accessible only to sudo admins.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.node_response import NodeResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.node_response import NodeResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -267,9 +267,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
 
     try:
         # Get Nodes
@@ -318,14 +318,14 @@ Retrieve usage statistics for nodes within a specified date range.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.nodes_usage_response import NodesUsageResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.nodes_usage_response import NodesUsageResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -337,9 +337,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
     start = '' # str |  (optional) (default to '')
     end = '' # str |  (optional) (default to '')
 
@@ -396,15 +396,15 @@ Update a node's details. Only accessible to sudo admins.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.node_modify import NodeModify
-from marzapi.models.node_response import NodeResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.node_modify import NodeModify
+from pymarz.models.node_response import NodeResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -416,11 +416,11 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
     node_id = 56 # int | 
-    node_modify = marzapi.NodeModify() # NodeModify | 
+    node_modify = pymarz.NodeModify() # NodeModify | 
 
     try:
         # Modify Node
@@ -474,13 +474,13 @@ Trigger a reconnection for the specified node. Only accessible to sudo admins.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -492,9 +492,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
     node_id = 56 # int | 
 
     try:
@@ -548,13 +548,13 @@ Delete a node and remove it from xray in the background.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -566,9 +566,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.NodeApi(api_client)
+    api_instance = pymarz.NodeApi(api_client)
     node_id = 56 # int | 
 
     try:

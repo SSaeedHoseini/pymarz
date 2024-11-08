@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.user_template_response import UserTemplateResponse
+from pymarz.models.user_template_response import UserTemplateResponse
 
 # TODO update the JSON string below
 json = "{}"

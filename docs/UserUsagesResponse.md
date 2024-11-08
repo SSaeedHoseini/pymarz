@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.user_usages_response import UserUsagesResponse
+from pymarz.models.user_usages_response import UserUsagesResponse
 
 # TODO update the JSON string below
 json = "{}"

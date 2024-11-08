@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.location_inner import LocationInner
+from pymarz.models.location_inner import LocationInner
 
 # TODO update the JSON string below
 json = "{}"

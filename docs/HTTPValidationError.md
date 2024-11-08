@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.http_validation_error import HTTPValidationError
+from pymarz.models.http_validation_error import HTTPValidationError
 
 # TODO update the JSON string below
 json = "{}"

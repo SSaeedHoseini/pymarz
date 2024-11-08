@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.proxy_host import ProxyHost
+from pymarz.models.proxy_host import ProxyHost
 
 # TODO update the JSON string below
 json = "{}"

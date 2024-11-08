@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.system_stats import SystemStats
+from pymarz.models.system_stats import SystemStats
 
 # TODO update the JSON string below
 json = "{}"

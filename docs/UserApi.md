@@ -1,4 +1,4 @@
-# marzapi.UserApi
+# pymarz.UserApi
 
 All URIs are relative to *http://localhost*
 
@@ -32,15 +32,15 @@ Add a new user  - **username**: 3 to 32 characters, can include a-z, 0-9, and un
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_create import UserCreate
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_create import UserCreate
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -52,10 +52,10 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
-    user_create = marzapi.UserCreate() # UserCreate | 
+    api_instance = pymarz.UserApi(api_client)
+    user_create = pymarz.UserCreate() # UserCreate | 
 
     try:
         # Add User
@@ -109,13 +109,13 @@ Delete users who have expired within the specified date range.  - **expired_afte
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -127,9 +127,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     expired_after = '2024-01-01T00:00:00' # datetime |  (optional)
     expired_before = '2024-01-31T23:59:59' # datetime |  (optional)
 
@@ -187,13 +187,13 @@ Get users who have expired within the specified date range.  - **expired_after**
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -205,9 +205,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     expired_after = '2024-01-01T00:00:00' # datetime |  (optional)
     expired_before = '2024-01-31T23:59:59' # datetime |  (optional)
 
@@ -264,14 +264,14 @@ Get user information
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -283,9 +283,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
 
     try:
@@ -339,14 +339,14 @@ Get users usage
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_usages_response import UserUsagesResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_usages_response import UserUsagesResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -358,9 +358,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
     start = '' # str |  (optional) (default to '')
     end = '' # str |  (optional) (default to '')
@@ -419,15 +419,15 @@ Get all users
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_status import UserStatus
-from marzapi.models.users_response import UsersResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_status import UserStatus
+from pymarz.models.users_response import UsersResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -439,15 +439,15 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     username = ['username_example'] # List[str] |  (optional)
     search = 'search_example' # str |  (optional)
     admin = ['admin_example'] # List[str] |  (optional)
-    status = marzapi.UserStatus() # UserStatus |  (optional)
+    status = pymarz.UserStatus() # UserStatus |  (optional)
     sort = 'sort_example' # str |  (optional)
 
     try:
@@ -507,14 +507,14 @@ Get all users usage
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.users_usages_response import UsersUsagesResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.users_usages_response import UsersUsagesResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -526,9 +526,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     start = '' # str |  (optional) (default to '')
     end = '' # str |  (optional) (default to '')
     admin = ['admin_example'] # List[str] |  (optional)
@@ -587,15 +587,15 @@ Modify an existing user  - **username**: Cannot be changed. Used to identify the
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_modify import UserModify
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_modify import UserModify
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -607,11 +607,11 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
-    user_modify = marzapi.UserModify() # UserModify | 
+    user_modify = pymarz.UserModify() # UserModify | 
 
     try:
         # Modify User
@@ -665,13 +665,13 @@ Remove a user
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -683,9 +683,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
 
     try:
@@ -739,14 +739,14 @@ Reset user data usage
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -758,9 +758,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
 
     try:
@@ -815,13 +815,13 @@ Reset all users data usage
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -833,9 +833,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
 
     try:
         # Reset Users Data Usage
@@ -884,14 +884,14 @@ Revoke users subscription (Subscription link and proxies)
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -903,9 +903,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
 
     try:
@@ -959,14 +959,14 @@ Set a new owner (admin) for a user.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_response import UserResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_response import UserResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -978,9 +978,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserApi(api_client)
+    api_instance = pymarz.UserApi(api_client)
     username = 'username_example' # str | 
     admin_username = 'admin_username_example' # str | 
 

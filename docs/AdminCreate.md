@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.admin_create import AdminCreate
+from pymarz.models.admin_create import AdminCreate
 
 # TODO update the JSON string below
 json = "{}"

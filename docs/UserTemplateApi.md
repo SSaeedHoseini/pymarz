@@ -1,4 +1,4 @@
-# marzapi.UserTemplateApi
+# pymarz.UserTemplateApi
 
 All URIs are relative to *http://localhost*
 
@@ -24,15 +24,15 @@ Add a new user template  - **name** can be up to 64 characters - **data_limit** 
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_template_create import UserTemplateCreate
-from marzapi.models.user_template_response import UserTemplateResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_template_create import UserTemplateCreate
+from pymarz.models.user_template_response import UserTemplateResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -44,10 +44,10 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserTemplateApi(api_client)
-    user_template_create = marzapi.UserTemplateCreate() # UserTemplateCreate | 
+    api_instance = pymarz.UserTemplateApi(api_client)
+    user_template_create = pymarz.UserTemplateCreate() # UserTemplateCreate | 
 
     try:
         # Add User Template
@@ -101,14 +101,14 @@ Get User Template information with id
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_template_response import UserTemplateResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_template_response import UserTemplateResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -120,9 +120,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserTemplateApi(api_client)
+    api_instance = pymarz.UserTemplateApi(api_client)
     template_id = 56 # int | 
 
     try:
@@ -176,14 +176,14 @@ Get a list of User Templates with optional pagination
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_template_response import UserTemplateResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_template_response import UserTemplateResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -195,9 +195,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserTemplateApi(api_client)
+    api_instance = pymarz.UserTemplateApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
 
@@ -253,15 +253,15 @@ Modify User Template  - **name** can be up to 64 characters - **data_limit** mus
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.user_template_modify import UserTemplateModify
-from marzapi.models.user_template_response import UserTemplateResponse
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.user_template_modify import UserTemplateModify
+from pymarz.models.user_template_response import UserTemplateResponse
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -273,11 +273,11 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserTemplateApi(api_client)
+    api_instance = pymarz.UserTemplateApi(api_client)
     template_id = 56 # int | 
-    user_template_modify = marzapi.UserTemplateModify() # UserTemplateModify | 
+    user_template_modify = pymarz.UserTemplateModify() # UserTemplateModify | 
 
     try:
         # Modify User Template
@@ -332,13 +332,13 @@ Remove a User Template by its ID
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -350,9 +350,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.UserTemplateApi(api_client)
+    api_instance = pymarz.UserTemplateApi(api_client)
     template_id = 56 # int | 
 
     try:

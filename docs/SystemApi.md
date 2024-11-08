@@ -1,4 +1,4 @@
-# marzapi.SystemApi
+# pymarz.SystemApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,14 +23,14 @@ Get a list of proxy hosts grouped by inbound tag.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.proxy_host import ProxyHost
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.proxy_host import ProxyHost
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -42,9 +42,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SystemApi(api_client)
+    api_instance = pymarz.SystemApi(api_client)
 
     try:
         # Get Hosts
@@ -93,14 +93,14 @@ Retrieve inbound configurations grouped by protocol.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.proxy_inbound import ProxyInbound
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.proxy_inbound import ProxyInbound
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -112,9 +112,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SystemApi(api_client)
+    api_instance = pymarz.SystemApi(api_client)
 
     try:
         # Get Inbounds
@@ -163,14 +163,14 @@ Fetch system stats including memory, CPU, and user metrics.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.system_stats import SystemStats
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.system_stats import SystemStats
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -182,9 +182,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SystemApi(api_client)
+    api_instance = pymarz.SystemApi(api_client)
 
     try:
         # Get System Stats
@@ -233,14 +233,14 @@ Modify proxy hosts and update the configuration.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.proxy_host import ProxyHost
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.proxy_host import ProxyHost
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -252,9 +252,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.SystemApi(api_client)
+    api_instance = pymarz.SystemApi(api_client)
     request_body = None # Dict[str, List[ProxyHost]] | 
 
     try:

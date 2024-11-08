@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from marzapi.models.port import Port
+from pymarz.models.port import Port
 
 # TODO update the JSON string below
 json = "{}"

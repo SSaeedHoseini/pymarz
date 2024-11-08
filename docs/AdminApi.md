@@ -1,59 +1,42 @@
-# marzapi.AdminApi
+# pymarz.AdminApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**admin_token**](AdminApi.md#admin_token) | **POST** /api/admin/token | Admin Token
-[**create_admin**](AdminApi.md#create_admin) | **POST** /api/admin | Create Admin
-[**get_admins**](AdminApi.md#get_admins) | **GET** /api/admins | Get Admins
-[**get_current_admin**](AdminApi.md#get_current_admin) | **GET** /api/admin | Get Current Admin
-[**modify_admin**](AdminApi.md#modify_admin) | **PUT** /api/admin/{username} | Modify Admin
-[**remove_admin**](AdminApi.md#remove_admin) | **DELETE** /api/admin/{username} | Remove Admin
+[**login**](AdminApi.md#login) | **POST** /api/admin/token | Login and get token
+[**get_current**](AdminApi.md#get_current) | **GET** /api/admin | Get Current Admin
+[**create**](AdminApi.md#create) | **POST** /api/admin | Create Admin
+[**get**](AdminApi.md#get) | **GET** /api/admins | Get Admins
+[**update**](AdminApi.md#update) | **PUT** /api/admin/{username} | Modify Admin
+[**delete**](AdminApi.md#delete) | **DELETE** /api/admin/{username} | Remove Admin
 
 
-# **admin_token**
-> Token admin_token(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
+# **login**
+> login(username, password)
 
-Admin Token
+Admin Login
 
 Authenticate an admin and issue a token.
 
 ### Example
 
 ```python
-import time
-import os
-import marzapi
-from marzapi.models.token import Token
-from marzapi.rest import ApiException
-from pprint import pprint
+from pymarz import MarzAPI
 
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
-    host = "http://localhost"
-)
+# Login with admin user
+# if the token expires, it will be renewed automatically
+client = pymarz(url="your-domain",username="admin",password="admin")
 
+# If you need to login manually
+# username="admin"
+# password="admin"
+await client.login()
 
-# Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
-    username = 'username_example' # str | 
-    password = 'password_example' # str | 
-    grant_type = 'grant_type_example' # str |  (optional)
-    scope = '' # str |  (optional) (default to '')
-    client_id = 'client_id_example' # str |  (optional)
-    client_secret = 'client_secret_example' # str |  (optional)
-
-    try:
-        # Admin Token
-        api_response = api_instance.admin_token(username, password, grant_type=grant_type, scope=scope, client_id=client_id, client_secret=client_secret)
-        print("The response of AdminApi->admin_token:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AdminApi->admin_token: %s\n" % e)
+# if you need to login with other user
+# username="other-user"
+# password="other-user-password"
+await client.login(username="other-user",password="other-user-password")
 ```
 
 
@@ -63,15 +46,10 @@ with marzapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **str**|  | 
- **password** | **str**|  | 
- **grant_type** | **str**|  | [optional] 
- **scope** | **str**|  | [optional] [default to &#39;&#39;]
- **client_id** | **str**|  | [optional] 
- **client_secret** | **str**|  | [optional] 
+ **password** | **str**|  |
 
 ### Return type
-
-[**Token**](Token.md)
+None
 
 ### Authorization
 
@@ -103,15 +81,15 @@ Create a new admin if the current admin has sudo privileges.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.admin import Admin
-from marzapi.models.admin_create import AdminCreate
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.admin import Admin
+from pymarz.models.admin_create import AdminCreate
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -123,10 +101,10 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
-    admin_create = marzapi.AdminCreate() # AdminCreate | 
+    api_instance = pymarz.AdminApi(api_client)
+    admin_create = pymarz.AdminCreate() # AdminCreate | 
 
     try:
         # Create Admin
@@ -180,14 +158,14 @@ Fetch a list of admins with optional filters for pagination and username.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.admin import Admin
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.admin import Admin
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -199,9 +177,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
+    api_instance = pymarz.AdminApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     username = 'username_example' # str |  (optional)
@@ -259,14 +237,14 @@ Retrieve the current authenticated admin.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.admin import Admin
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.admin import Admin
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -278,9 +256,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
+    api_instance = pymarz.AdminApi(api_client)
 
     try:
         # Get Current Admin
@@ -329,15 +307,15 @@ Modify an existing admin's details.
 ```python
 import time
 import os
-import marzapi
-from marzapi.models.admin import Admin
-from marzapi.models.admin_modify import AdminModify
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.models.admin import Admin
+from pymarz.models.admin_modify import AdminModify
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -349,11 +327,11 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
+    api_instance = pymarz.AdminApi(api_client)
     username = 'username_example' # str | 
-    admin_modify = marzapi.AdminModify() # AdminModify | 
+    admin_modify = pymarz.AdminModify() # AdminModify | 
 
     try:
         # Modify Admin
@@ -408,13 +386,13 @@ Remove an admin from the database.
 ```python
 import time
 import os
-import marzapi
-from marzapi.rest import ApiException
+import pymarz
+from pymarz.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = marzapi.Configuration(
+configuration = pymarz.Configuration(
     host = "http://localhost"
 )
 
@@ -426,9 +404,9 @@ configuration = marzapi.Configuration(
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
-with marzapi.ApiClient(configuration) as api_client:
+with pymarz.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = marzapi.AdminApi(api_client)
+    api_instance = pymarz.AdminApi(api_client)
     username = 'username_example' # str | 
 
     try:
